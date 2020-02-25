@@ -1,0 +1,41 @@
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+    <changeSet author="root" id="04">
+        <createTable tableName="product">
+            <column name="id" type="bigint" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false" />
+            </column>
+            <column name="mark" type="varchar(255)">
+                <constraints nullable="false" foreignKeyName="fk_products_mark" references="products_mark(name)"/>
+            </column>
+            <column name="model" type="varchar(255)">
+                <constraints nullable="false" />
+            </column>
+            <column name="range" type="varchar(255)">
+                <constraints nullable="false" />
+            </column>
+            <column name="category" type="varchar(255)">
+                <constraints nullable="false" foreignKeyName="fk_products_category" references="products_category(name)" />
+            </column>
+            <column name="years" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="price" type="varchar(255)">
+                <constraints nullable="false" />
+            </column>
+            <column name="info" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="photo1" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="photo2" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="photo3" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+        </createTable>
+    </changeSet>
+</databaseChangeLog>

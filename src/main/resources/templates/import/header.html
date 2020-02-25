@@ -1,0 +1,128 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta name="google-site-verification" content="bQg0aBEXxYIgL5pJDOIKL45YK4CP3jNmoSFixZfKtJs" />
+        <meta charset="utf-8">
+        <script th:src="@{/static/v2/js/lib/angular.min.js}"></script>
+        <script th:src="@{/static/v2/js/lib/ui-bootstrap-tpls-2.5.0.min.js}"></script>
+        <script th:src="@{/static/v2/js/app/app.js}"></script>
+        <link th:href="@{/static/v2/css/app/app_style.css}" rel="stylesheet"/>
+        <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
+        <link rel="shortcut icon" href="{{ asset('images/favicon.ico') }}">
+
+        <link rel="canonical" href="https://getbootstrap.com/docs/4.4/examples/floating-labels/">
+
+        <link href="/docs/4.4/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+        <meta name="Keywords"
+              content="Кенгурятник, Дуга, Кенгурин, Обвес, Передняя защита, Губа, Обводка, Ус, Усы, ARP(Турция), St-line, автоакссесуары,front bumper protection, rear bumper protection, sills, roof rails, chandeliers, stainless steel products, стлайн, ст-лайн, stline">
+        <meta name="author" content="eliz">
+    </head>
+    <body>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js">
+    </script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $("#locales").change(function () {
+                var selectedOption = $('#locales').val();
+                if (selectedOption != ''){
+                    window.location.replace('/st-line/index/?lang=' + selectedOption);
+                }
+            });
+        });
+    </script>
+        <div class="row" th:fragment="header">
+            <div class="col-md-1">
+            </div>
+            <div class="col-md-6">
+                <nav class="site-header py-1">
+                    <div class="container d-flex flex-column flex-md-row justify-content-between">
+                        <nav class="my-2 my-md-0 mr-md-3">
+                            <a class="p-2 " href="#"><i class="fas fa-phone"></i>+38(068)269-25-03 <br> +38(073)227-65-93</a>
+                        </nav>
+                        <a class="py-2 d-none d-md-inline-block" href="#"><i class="fas fa-envelope"></i>st-line@i.ua</a>
+                        <a class="py-2 d-none d-md-inline-block" href="#"><i class="fab fa-skype"></i>st-line@mail.ru</a>
+                        <a class="py-2 d-none d-md-inline-block" href="https://www.facebook.com/vadim.troyan.77" target="_blank">
+                            <i class="fab fa-facebook"></i>
+                        </a>
+                        <a class="py-2 d-none d-md-inline-block" href="https://plus.google.com/112045318869829258987" target="_blank">
+                            <i class="fab fa-google-plus-g"></i>
+                        </a>
+                        <a class="py-2 d-none d-md-inline-block" href="https://www.youtube.com/channel/UC1kX8SSPAU8RDW4-MGur3FA" target="_blank">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                        <a class="py-2 d-none d-md-inline-block" href="https://www.instagram.com/uk_vinnitsa/" target="_blank">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a class="py-2 d-none d-md-inline-block" href="https://t.me/stlinevn" target="_blank">
+                            <i class="fas fa-paper-plane"></i>
+                        </a>
+                    </div>
+                </nav>
+            </div>
+            <div class="col-md-2">
+                <div class="input-group mb-3" style="margin-top:10px;">
+                    <div class="input-group-prepend">
+                        <label class="input-group-text" for="locales" th:text="#{lang.change}"></label>
+                    </div>
+                    <select class="custom-select" id="locales">
+                        <option value=""></option>
+                        <option value="ru" th:text="#{lang.ru}"></option>
+                        <option value="en" th:text="#{lang.eng}"></option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-md-2"></div>
+        </div>
+        <nav class="site-header sticky-top py-1  d-flex flex-row-reverse nav nav-masthead justify-content-right"
+             style="position: fixed; right:10px">
+            <a href="#" data-toggle="modal" data-target="#exampleModal">
+                <wrapper>
+                    <div class="container d-flex flex-column flex-md-row justify-content-right">
+                        <div class="dws">
+                            <div class="pulse"  style="margin-right:350px; margin-top:150px;">
+                                <div class="phone"><i class="fas fa-comments"></i></div>
+                                <div th:text="#{lang.write}" class="text"></div>
+                            </div>
+                        </div>
+                    </div>
+                </wrapper>
+            </a>
+        </nav>
+        <div id="app">
+            <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
+                <div class="container">
+                    <a class="navbar-brand" href="{{ url('/') }}">
+                        <img style="max-height:60px" src="{{asset('images/ST-line.jpg')}}" alt="">
+                    </a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                            aria-controls="navbarSupportedContent" aria-expanded="false"
+                            aria-label="{{ __('Toggle navigation') }}">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav mr-auto">
+                            <li class="nav-item">
+                                <a href="/st-line/index/#main" th:text="#{lang.main}" class="nav-link active"></a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="/st-line/index/#about" th:text="#{lang.about}" class="nav-link active"></a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="/st-line/index/#products" th:text="#{lang.products}" class="nav-link active"></a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="/st-line/news" th:text="#{lang.new}" class="nav-link active"></a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="/st-line/login" th:text="#{lang.orderOnline}" class="nav-link active"></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </body>
+</html>
+

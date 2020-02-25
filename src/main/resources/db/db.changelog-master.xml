@@ -1,0 +1,24 @@
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+    <include file="changelog/01-create-message.xml"
+             relativeToChangelogFile="true" />
+    <include file="changelog/12-create-products-category.xml"
+             relativeToChangelogFile="true" />
+    <include file="changelog/13-create-products-mark.xml"
+             relativeToChangelogFile="true" />
+    <include file="changelog/04-create-product.xml"
+             relativeToChangelogFile="true" />
+    <include file="changelog/06-create-role.xml"
+             relativeToChangelogFile="true" />
+    <include file="changelog/05-create-user.xml"
+             relativeToChangelogFile="true" />
+    <include file="changelog/02-create-post.xml"
+             relativeToChangelogFile="true" />
+    <include file="changelog/10-create-order.xml"
+             relativeToChangelogFile="true" />
+    <include file="changelog/14-create-orders-detail.xml"
+             relativeToChangelogFile="true" />
+    <include file="changelog/09-create-telegramMessages.xml"
+             relativeToChangelogFile="true" />
+</databaseChangeLog>

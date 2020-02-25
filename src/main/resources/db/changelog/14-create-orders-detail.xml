@@ -1,0 +1,14 @@
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+    <changeSet author="root" id="14">
+        <createTable tableName="order_detail">
+            <column name="orderId" type="bigint">
+                <constraints primaryKey="true" nullable="false" foreignKeyName="fk_orders_orderId" references="order(id)"/>
+            </column>
+            <column name="productId" type="bigint">
+                <constraints nullable="false" foreignKeyName="fk_product_productId" references="product(id)"/>
+            </column>
+        </createTable>
+    </changeSet>
+</databaseChangeLog>

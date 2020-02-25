@@ -1,0 +1,23 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>AngularJS</title>
+        <script th:src="@{/static/v2/js/lib/angular.min.js}"></script>
+        <script th:src="@{/static/v2/js/app/controllers.js}"></script>
+        <link th:href="@{/static/v2/css/message.css}" rel="stylesheet"/>
+    </head>
+    <body>
+        <div th:include="import/header"></div>
+        <br>
+        <div ng-app="app" ng-controller="MessageController" class="container">
+            <div class="alert alert-secondary" ng-repeat="message in messages">
+                <h2 class="text-muted">{{ message.message}}</h2>
+                <p class="lead">{{ message.name }}</p>
+                <p class="lead">{{ message.phone }}</p>
+                <p class="lead">{{ message.date}}</p>
+                <a ng-click="deleteMessage(message)"><button type="button" name="button" class="btn btn-danger">Delete</button></a>
+            </div>
+        </div>
+        <div th:include="import/footer"></div>
+    </body>
+</html>
